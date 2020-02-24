@@ -10,9 +10,9 @@ public class Test {
 
         //line 74
 
-        SnakeGame test = new SnakeGame(play, 4, 4);
+        SnakeGame test = new SnakeGame(play, 2, 2);
         int[] ans = new int[3];
-        ans = test.findTailExhaustive();
+        ans = test.findTailRecursive();
         for(int i = 0; i < ans.length; i++){
             System.out.print(ans[i] + " ");
         }
