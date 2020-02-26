@@ -10,7 +10,7 @@ public class Test {
 
         //line 74
 
-        SnakeGame test = new SnakeGame(play, 2, 2);
+        SnakeGame test = new SnakeGame(play, 4, 4);
         int[] ans = new int[3];
         ans = test.findTailRecursive();
         for(int i = 0; i < ans.length; i++){
