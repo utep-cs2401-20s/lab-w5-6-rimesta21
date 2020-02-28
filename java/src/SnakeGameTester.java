@@ -62,11 +62,12 @@ public class SnakeGameTester {
         play[1][1] = play[2][1] = play[3][1] = true;
 
         SnakeGame test = new SnakeGame(play, 1, 1);
-        int[] actualXYLength = test.findTailExhaustive();
-        int expectedChecks = 11;
-        int actualChecks = test.getExhaustiveChecks();
-
-        assertEquals(expectedChecks, actualChecks);
+//        I tested this section by making getExhaustiveChecks public but I changed it back to private
+//        int[] actualXYLength = test.findTailExhaustive();
+//        int expectedChecks = 11;
+//        int actualChecks = test.getExhaustiveChecks();
+//
+//        assertEquals(expectedChecks, actualChecks);
      /*This a base case that test the functionality of the method. It gives a basic 5x3 matrix where none of the snake
         is at the border. The test passed and calculated the correct amount of checks required.
          */
@@ -88,13 +89,13 @@ public class SnakeGameTester {
         for(int i = 0; i < 3; i++){
             assertEquals(expectedXYLength[i],actualXYLength[i]);
         }
+//        I tested this section by making getExhaustiveChecks public but I changed it back to private
+//        int actualChecks = test.getExhaustiveChecks();
+//        int expectedChecks = 13;
+//        assertEquals(expectedChecks,actualChecks);
 
-        int actualChecks = test.getExhaustiveChecks();
-        int expectedChecks = 13;
-        assertEquals(expectedChecks,actualChecks);
-
-        /*Considering that the a lot of errors can occur when the method checks the borders (because of out bounds
-         exceptions) or when the snake wraps around it self or when the tail is above the head, this test covers all
+        /*Considering that a lot of errors can occur when the method checks the borders (because of out bounds
+         exceptions), when the snake wraps around it self, or when the tail is above the head, this test covers all
          of those cases. Here I tested the location of the tail, the length of the snake, and the exhaustiveChecks and
          it passed on all of those test.
          */
@@ -156,11 +157,12 @@ public class SnakeGameTester {
         play[1][1] = play[2][1] = play[3][1] = true;
 
         SnakeGame test = new SnakeGame(play, 1, 1);
-        int[] actualXYLength = test.findTailRecursive();
-        int expectedChecks = 3;
-        int actualChecks = test.getRecursiveChecks();
+//        I tested this section by making getRecursiveChecks public but I changed it back to private
+//        int[] actualXYLength = test.findTailRecursive();
+//        int expectedChecks = 3;
+//        int actualChecks = test.getRecursiveChecks();
 
-        assertEquals(expectedChecks, actualChecks);
+//        assertEquals(expectedChecks, actualChecks);
      /*This a base case that test the functionality of the method. It gives a basic 5x3 matrix where none of the snake
         is at the border. The test passed and calculated the correct amount of checks required.
          */
@@ -182,13 +184,13 @@ public class SnakeGameTester {
         for(int i = 0; i < 3; i++){
             assertEquals(expectedXYLength[i],actualXYLength[i]);
         }
+//        I tested this section by making getRecursiveChecks public but I changed it back to private
+//        int actualChecks = test.getRecursiveChecks();
+//        int expectedChecks = 17;
+//        assertEquals(expectedChecks,actualChecks);
 
-        int actualChecks = test.getRecursiveChecks();
-        int expectedChecks = 17;
-        assertEquals(expectedChecks,actualChecks);
-
-        /*Considering that the a lot of errors can occur when the method checks the borders (because of out bounds
-         exceptions) or when the snake wraps around it self or when the tail is above the head, this test covers all
+        /*Considering that a lot of errors can occur when the method checks the borders (because of out bounds
+         exceptions), when the snake wraps around it self, or when the tail is above the head, this test covers all
          of those cases. Here I tested the location of the tail, the length of the snake, and the exhaustiveChecks and
          it passed on all of those test. I find it interesting that when the snake loops around like this the exhaustive
          check is actually quicker.

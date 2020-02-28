@@ -34,7 +34,7 @@ public class SnakeGame {
         recursiveChecks++;
 
         if(currentPosition[0] - 1 > - 1 && currentPosition[0] - 1 != previousPosition[0] &&
-                game[currentPosition[0]-1][currentPosition[1]]){
+                game[currentPosition[0] - 1][currentPosition[1]]){
             previousPosition[0] = currentPosition[0];
             previousPosition[1] = currentPosition[1];
             currentPosition[0] = currentPosition[0] - 1;
@@ -97,7 +97,7 @@ public class SnakeGame {
 
     private int NeighborCount(int row, int col) {
         int count = 0;
-        if((row - 1 > -1) && game[row -1][col]){
+        if((row - 1 > -1) && game[row - 1][col]){
             count++;
         }
         if((row + 1 < game.length) && game[row + 1][col]) {
@@ -106,7 +106,7 @@ public class SnakeGame {
         if((col - 1 > -1) && game[row][col - 1]) {
             count++;
         }
-        if((col + 1 < game[row].length) && game[row][col + 1] ) {
+        if((col + 1 < game[row].length) && game[row][col + 1]) {
             count++;
         }
         return count;
@@ -117,11 +117,11 @@ public class SnakeGame {
         recursiveChecks = 0;
     }
 
-    public int getExhaustiveChecks() {
+    private static int getExhaustiveChecks() {
         return exhaustiveChecks;
     }
 
-    public int getRecursiveChecks() {
+    private static int getRecursiveChecks() {
         return recursiveChecks;
     }
 
